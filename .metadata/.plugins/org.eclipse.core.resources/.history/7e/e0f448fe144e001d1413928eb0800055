@@ -1,0 +1,5 @@
+package com.hugo.myapi.service.exceptions;
+
+public class ObjectNotFoundException {
+
+}

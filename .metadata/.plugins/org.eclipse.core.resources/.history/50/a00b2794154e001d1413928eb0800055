@@ -1,0 +1,11 @@
+package com.hugo.myapi.resources.exceptions;
+
+public class StandardError {
+	
+	private Integer status;
+	private Long timestamp;
+	private String message;
+	
+	
+
+}

@@ -1,0 +1,5 @@
+package com.hugo.myapi.resources;
+
+public class UsuarioResource {
+
+}

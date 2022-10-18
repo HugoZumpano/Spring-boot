@@ -1,0 +1,54 @@
+package com.hugo.myapi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
+import java.util.Optional;
+
+import com.hugo.myapi.domain.Usuarios;
+import com.hugo.myapi.repositories.UsuariosRepository;
+import com.hugo.myapi.service.exceptions.ObjectNotFoundException;
+
+
+
+@Service
+public class UsuariosService {
+
+	@Autowired
+	private UsuariosRepository repository;
+
+	public Usuarios findById(Integer id) {
+		Optional<Usuarios> obj = repository.findById(id);
+		return obj.orElseThrow(()-> new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Usuarios.class.getName()));
+	}
+
+	public List<Usuarios> findAll() {
+	
+		return repository.findAll();
+	}
+
+	public Usuarios update(Integer id, Usuarios obj) {
+		Usuarios newObj = findById(id);
+		newObj.setNome(obj.getNome());
+		newObj.setLogin(obj.getLogin());
+		newObj.setSenha(obj.getSenha());		
+		return repository.save(newObj);
+	}
+	
+	public Usuarios create(Usuarios obj) {
+		obj.setId(null);
+		return repository.save(obj);
+		
+	}
+
+	public void delete(Integer id) {
+		findById(id);
+		repository.delete(id);
+		return ResponseEntity.noContent().build();
+		
+	}
+
+}

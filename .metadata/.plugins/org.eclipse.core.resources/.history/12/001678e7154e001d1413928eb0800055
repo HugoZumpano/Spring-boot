@@ -1,0 +1,18 @@
+package com.hugo.myapi.resources.exceptions;
+
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.hugo.myapi.service.exceptions.ObjectNotFoundException;
+
+@ControllerAdvice
+public class ResourceExceptionHandler {
+	
+	@ExceptionHandler(ObjectNotFoundException.class)
+	public ResponseEntity<StandardError> ObjectNotFound(){
+		
+	}
+
+}

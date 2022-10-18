@@ -1,0 +1,5 @@
+package com.hugo.myapi.resources.exceptions;
+
+public class ResourceExceptionHandler {
+
+}

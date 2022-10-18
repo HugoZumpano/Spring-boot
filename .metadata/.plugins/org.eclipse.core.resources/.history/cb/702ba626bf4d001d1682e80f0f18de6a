@@ -1,0 +1,19 @@
+package com.hugo.myapi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hugo.myapi.repositories.UsuariosRepository;
+
+@Service
+public class UsuariosService {
+	
+	@Autowired
+	private UsuariosRepository repository;
+	
+	public Usuario findById(Integer id) {
+		Optional<Usuarios> obj = repository.findById(id);
+		return obj.orElse(null);
+	}
+
+}

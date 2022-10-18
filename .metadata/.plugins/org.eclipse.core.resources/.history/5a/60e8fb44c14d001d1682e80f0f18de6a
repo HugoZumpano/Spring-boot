@@ -1,0 +1,38 @@
+package com.hugo.myapi;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.hugo.myapi.domain.Usuarios;
+import com.hugo.myapi.repositories.UsuariosRepository;
+
+@SpringBootApplication
+public class MyapApplication implements CommandLineRunner {
+	
+	@Autowired
+	private UsuariosRepository usuarioRepository;
+
+	public static void main(String[] args) {
+		SpringApplication.run(MyapApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+
+		Usuarios usuario1 = new Usuarios(null, "hugo Zumpanos", "hugo", "123");
+		Usuarios usuario2 = new Usuarios(null, "Mariane Bergers", "mary", "123");
+		
+		
+		usuarioRepository.saveAll(Arrays.asList(usuario1, usuario2));
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.hugo.myapi;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.hugo.myapi.domain.Usuario;
+
+@SpringBootApplication
+public class MyapApplication  implements CommandLineRunner{
+
+	public static void main(String[] args) {
+		SpringApplication.run(MyapApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		Usuario usuario1 = new Usuario(null, "hugo Zumpano", "hugo", "123");
+		Usuario usuario2 = new Usuario(null,"Mariane Berger" , "mary", "123");
+		
+		
+	}
+
+}
