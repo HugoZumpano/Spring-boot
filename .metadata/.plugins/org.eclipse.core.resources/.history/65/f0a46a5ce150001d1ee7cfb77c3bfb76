@@ -23,7 +23,7 @@ public class MyapApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		Usuarios usuario1 = new Usuarios(null, "Hugo Zumpano", "hugo", "1234");
+		Usuarios usuario1 = new Usuarios(null, "Hugo Zumpano", "hugo", "123");
 		Usuarios usuario2 = new Usuarios(null, "Mariane Berger", "mary", "123");
 		Usuarios usuario3 = new Usuarios(null, "joão Gomes ", "mary", "123");
 		Usuarios usuario4 = new Usuarios(null, "Maria Roberta", "mary", "123");
